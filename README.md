@@ -1,2 +1,3 @@
 # RPSSL_TaelynnKnutson
+This is a web-version of the popular game Rochambeau with a twist. In addition to the original rock, paper, and scissors, you can choose Spock or lizard. You may have seen this version on the show Big Bang Theory. Whether or not you are familiar with the game, check it out and see why everyone is playing Rock, Paper, Scissors, Spock, Lizard!
 https://trello.com/b/WaNiu15B/rochambeau-2
