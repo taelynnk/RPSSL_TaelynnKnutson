@@ -30,28 +30,35 @@ function playGame() {
         if (playerChoice == computerChoice) {
             // We have a tie!
             updateScore(1);
-            displayGameResult("tie")
+            displayGameResult("tie");
+            updateMatches();
         } else if (playerChoice == 0 && (computerChoice == 2 || computerChoice == 4)) {
             updateScore(0);
-            displayGameResult("win")
+            displayGameResult("win");
+            updateMatches();
         } else if (playerChoice == 1 && (computerChoice == 0 || computerChoice == 3)) {
             // Paper beats scissors - a win!
             updateScore(0);
-            displayGameResult("win")
+            displayGameResult("win");
+            updateMatches();
         } else if (playerChoice == 2 && (computerChoice == 1 || computerChoice == 4)) {
             // Scissors beats paper - a win!
             updateScore(0);
-            displayGameResult("win")
+            displayGameResult("win");
+            updateMatches();
         } else if (playerChoice == 3 && (computerChoice == 2 || computerChoice == 0)) {
             updateScore(0);
-            displayGameResult("win")
+            displayGameResult("win");
+            updateMatches();
         } else if (playerChoice == 4 && (computerChoice == 3 || computerChoice == 1)) {
             updateScore(0);
-            displayGameResult("win")
+            displayGameResult("win");
+            updateMatches();
         } else {
             // All other combinations are losses
             updateScore(2);
-            displayGameResult("lose")
+            displayGameResult("lose");
+            updateMatches();
         }
     }
     playerChoice = null;
@@ -77,7 +84,6 @@ function displayGameResult(result) {
         document.getElementById("result").className = "alert alert-info";
     }
     updateScoreBoard();
-    updateMatchBoard();
 }
 
 // Updates the score
@@ -122,20 +128,26 @@ playButton.addEventListener('click', () => {
     playGame()
 });
 
-var matches = [0, 0]
+var matches = [0, 0];
 
-function updateMatches() {
+function updateMatchBoard() {
     document.getElementById("matchWins").textContent = matches[0];
     document.getElementById("matchLosses").textContent = matches[1];
 }
 
-function updateMatchBoard() {
+function updateMatches() {
     if (score[0] == 2) {
         ++matches[0];
-        score==[0, 0, 0];
+        score[0] = 0;
+        score[1] = 0;
+        score[2] = 0;
+        updateMatchBoard();
     } else if (score[1] == 2) {
         ++matches[1];
-        score==[0, 0, 0];
+         score[0] = 0;
+        score[1] = 0;
+        score[2] = 0;
+        updateMatchBoard();
     }
 }
 
