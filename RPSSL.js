@@ -76,8 +76,8 @@ function displayGameResult(result) {
         document.getElementById("result").textContent = message + " A tie.";
         document.getElementById("result").className = "alert alert-info";
     }
-
     updateScoreBoard();
+    updateMatchBoard();
 }
 
 // Updates the score
@@ -130,13 +130,15 @@ function updateMatches() {
 }
 
 function updateMatchBoard() {
-    if (score[0] => 2) {
+    if (score[0] == 2) {
         ++matches[0];
-    } else if (score[1] => 2) {
+        score==[0, 0, 0];
+    } else if (score[1] == 2) {
         ++matches[1];
+        score==[0, 0, 0];
     }
-    score = [0, 0, 0];
 }
+
 
 
 
@@ -145,4 +147,3 @@ function updateMatchBoard() {
 // else check if score[1] > 2 then LOSE! (++matches[1])
 // else do nothing
 // in either win or lose, set score to [0, 0, 0]
-}
