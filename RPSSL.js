@@ -142,7 +142,7 @@ function updateMatches() {
         score[1] = 0;
         score[2] = 0;
         updateMatchBoard();
-    } else if (score[1] == 2) {
+    } else if (score[2] == 2) {
         ++matches[1];
          score[0] = 0;
         score[1] = 0;
