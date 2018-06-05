@@ -53,7 +53,8 @@ function playGame() {
             updateScore(2);
             displayGameResult("lose")
         }
-    } playerChoice = null;
+    }
+    playerChoice = null;
 }
 
 //Displays the result of the game
@@ -120,3 +121,28 @@ lizardButton.addEventListener('click', () => {
 playButton.addEventListener('click', () => {
     playGame()
 });
+
+var matches = [0, 0]
+
+function updateMatches() {
+    document.getElementById("matchWins").textContent = matches[0];
+    document.getElementById("matchLosses").textContent = matches[1];
+}
+
+function updateMatchBoard() {
+    if (score[0] => 2) {
+        ++matches[0];
+    } else if (score[1] => 2) {
+        ++matches[1];
+    }
+    score = [0, 0, 0];
+}
+
+
+
+
+// check if score[0] > 2 then WIN! (++matches[0])
+// else check if score[1] > 2 then LOSE! (++matches[1])
+// else do nothing
+// in either win or lose, set score to [0, 0, 0]
+}
