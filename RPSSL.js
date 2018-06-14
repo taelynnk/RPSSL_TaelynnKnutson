@@ -48,7 +48,7 @@ var Rochambeau = {
         Rochambeau.computer.choice = Math.floor(Math.random() * 5);
         console.log("The computer choice is " + Rochambeau.computer.choice);
     },
-    playTheGame: function playGame() {
+    playTheGame: function () {
         if (Rochambeau.player.choice != null) {
             if (Rochambeau.player.choice == Rochambeau.computer.choice) {
                 ++Rochambeau.score.ties;
@@ -91,8 +91,8 @@ var Rochambeau = {
         Rochambeau.player.choice = null;
     },
 
-    displayGameResult: function displayGameResult(result) {
-        var message = "Your choice was " + Rochambeau.choiceNames[Rochambeau.player.choices] + " and the computer's choice was " + Rochambeau.choiceNames[Rochambeau.computer.choices] + ".";
+    displayGameResult: function (result) {
+        var message = "Your choice was " + Rochambeau.choiceNames[Rochambeau.player.choice] + " and the computer's choice was " + Rochambeau.choiceNames[Rochambeau.computer.choice] + ".";
         if (result == "win") {
             document.getElementById("result").textContent = message + " YOU WIN!";
             document.getElementById("result").className = "alert alert-success";
@@ -105,14 +105,14 @@ var Rochambeau = {
         }
         Rochambeau.updateScoreBoard();
     },
-    updateScoreBoard: function updateScoreBoard() {
+    updateScoreBoard: function () {
         document.getElementById("wins").textContent = Rochambeau.score.wins;
         document.getElementById("losses").textContent = Rochambeau.score.losses;
         document.getElementById("ties").textContent = Rochambeau.score.ties;
         document.getElementById("matchWins").textContent = Rochambeau.matchScore.wins;
         document.getElementById("matchLosses").textContent = Rochambeau.matchScore.losses;
     },
-    updateMatches: function updateMatches() {
+    updateMatches: function () {
         if (Rochambeau.score.wins == 2) {
             ++Rochambeau.matchScore.wins;
             Rochambeau.score.wins = 0;
@@ -160,4 +160,5 @@ Rochambeau.lizardButton.addEventListener('click', () => {
 Rochambeau.playButton.addEventListener('click', () => {
     Rochambeau.playTheGame();
     Rochambeau.storeComputerChoice();
+    Rochambeau.updateScoreBoard();
 });
